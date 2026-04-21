@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grind Coffee Shop</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#FAF7F2',
+                            text: '#2B1810',
+                            terracotta: '#D4763E'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        heading: ['"Instrument Serif"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-brand-bg text-brand-text font-sans antialiased">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-brand-bg/90 backdrop-blur-md border-b border-brand-text/10">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-heading text-4xl mt-1">Grind.</a>
+            
+            <!-- Desktop Links -->
+            <div class="hidden md:flex gap-8 font-medium">
+                <a href="#about" class="hover:text-brand-terracotta transition-colors">About</a>
+                <a href="#menu" class="hover:text-brand-terracotta transition-colors">Menu</a>
+                <a href="#visit" class="hover:text-brand-terracotta transition-colors">Visit</a>
+            </div>
+            
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 -mr-2 text-brand-text hover:text-brand-terracotta transition-colors" aria-label="Toggle menu">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-bg border-b border-brand-text/10 px-6 py-6 space-y-6 font-medium text-lg absolute w-full shadow-lg">
+            <a href="#about" class="block hover:text-brand-terracotta transition-colors">About</a>
+            <a href="#menu" class="block hover:text-brand-terracotta transition-colors">Menu</a>
+            <a href="#visit" class="block hover:text-brand-terracotta transition-colors">Visit</a>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6">
+        <!-- Hero Section -->
+        <section class="min-h-[calc(100vh-5rem)] flex flex-col justify-center py-16 md:py-20">
+            <div class="space-y-6 md:space-y-8 max-w-4xl">
+                <!-- Eyebrow -->
+                <p class="text-sm md:text-base font-medium tracking-wide uppercase text-brand-text/70">
+                    A coffee shop for people who care about details.
+                </p>
+                
+                <!-- Headline -->
+                <h1 class="font-heading text-[5.5rem] sm:text-8xl md:text-9xl lg:text-[12rem] leading-[0.9] tracking-tight break-words">
+                    Grind.
+                </h1>
+                
+                <!-- Subheadline -->
+                <p class="text-lg sm:text-xl md:text-2xl font-light text-brand-text/80 max-w-2xl leading-relaxed">
+                    Single-origin coffee. Considered interiors. Free wifi that actually works.
+                </p>
+                
+                <!-- CTAs -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-4">
+                    <a href="#visit" class="inline-block text-center w-full sm:w-auto bg-brand-terracotta text-white font-medium rounded-full px-8 py-4 hover:opacity-90 transition-opacity">
+                        Find us
+                    </a>
+                    <a href="#menu" class="inline-block w-full sm:w-auto text-center font-medium underline-offset-4 hover:underline transition-all text-brand-text/80 hover:text-brand-text">
+                        See the menu
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 md:py-24 border-t border-brand-text/10 scroll-m-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24">
+                <!-- Left Column -->
+                <div>
+                    <h2 class="font-heading text-5xl mb-6 md:mb-8">Why Grind</h2>
+                    <p class="text-base md:text-lg text-brand-text/80 leading-relaxed">
+                        We believe that a great coffee shop is more than just good beans—it's about the entire experience. From our ethically sourced, single-origin roasts to our carefully considered interiors designed to foster focus and creativity. It's a space built for people who appreciate the finer details.
+                    </p>
+                </div>
+                
+                <!-- Right Column -->
+                <div class="flex flex-col justify-center">
+                    <ul class="space-y-4 md:space-y-6 text-base md:text-lg text-brand-text/90">
+                        <li class="flex items-start gap-4">
+                            <span class="text-brand-terracotta mt-1 text-sm md:text-base">✦</span>
+                            <span>Ethically sourced, single-origin beans</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-brand-terracotta mt-1 text-sm md:text-base">✦</span>
+                            <span>Designed for long working sessions</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="text-brand-terracotta mt-1 text-sm md:text-base">✦</span>
+                            <span>Quiet hours, 2pm–5pm, Mon–Fri</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="py-20 md:py-24 border-t border-brand-text/10 max-w-4xl mx-auto scroll-m-20">
+            <h2 class="font-heading text-5xl mb-10 md:mb-16 text-center">The Menu</h2>
+            
+            <div class="space-y-6">
+                <!-- Item 1 -->
+                <div class="flex items-baseline justify-between w-full">
+                    <span class="text-lg sm:text-xl md:text-2xl font-medium pr-2 sm:pr-4 bg-brand-bg relative z-10 shrink-0">Espresso</span>
+                    <div class="flex-grow border-b-2 border-dotted border-brand-text/20 relative top-[-4px] sm:top-[-6px] min-w-[10px]"></div>
+                    <span class="text-lg sm:text-xl md:text-2xl font-medium pl-2 sm:pl-4 bg-brand-bg relative z-10 shrink-0">₹180</span>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="flex items-baseline justify-between w-full">
+                    <span class="text-lg sm:text-xl md:text-2xl font-medium pr-2 sm:pr-4 bg-brand-bg relative z-10 shrink-0">Flat White</span>
+                    <div class="flex-grow border-b-2 border-dotted border-brand-text/20 relative top-[-4px] sm:top-[-6px] min-w-[10px]"></div>
+                    <span class="text-lg sm:text-xl md:text-2xl font-medium pl-2 sm:pl-4 bg-brand-bg relative z-10 shrink-0">₹220</span>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="flex items-baseline justify-between w-full">
+                    <span class="text-lg sm:text-xl md:text-2xl font-medium pr-2 sm:pr-4 bg-brand-bg relative z-10 shrink-0">Pour Over</span>
+                    <div class="flex-grow border-b-2 border-dotted border-brand-text/20 relative top-[-4px] sm:top-[-6px] min-w-[10px]"></div>
+                    <span class="text-lg sm:text-xl md:text-2xl font-medium pl-2 sm:pl-4 bg-brand-bg relative z-10 shrink-0">₹280</span>
+                </div>
+                
+                <!-- Item 4 -->
+                <div class="flex items-baseline justify-between w-full">
+                    <span class="text-lg sm:text-xl md:text-2xl font-medium pr-2 sm:pr-4 bg-brand-bg relative z-10 shrink-0">Cold Brew</span>
+                    <div class="flex-grow border-b-2 border-dotted border-brand-text/20 relative top-[-4px] sm:top-[-6px] min-w-[10px]"></div>
+                    <span class="text-lg sm:text-xl md:text-2xl font-medium pl-2 sm:pl-4 bg-brand-bg relative z-10 shrink-0">₹240</span>
+                </div>
+                
+                <!-- Item 5 -->
+                <div class="flex items-baseline justify-between w-full">
+                    <span class="text-lg sm:text-xl md:text-2xl font-medium pr-2 sm:pr-4 bg-brand-bg relative z-10 shrink-0">Matcha Latte</span>
+                    <div class="flex-grow border-b-2 border-dotted border-brand-text/20 relative top-[-4px] sm:top-[-6px] min-w-[10px]"></div>
+                    <span class="text-lg sm:text-xl md:text-2xl font-medium pl-2 sm:pl-4 bg-brand-bg relative z-10 shrink-0">₹260</span>
+                </div>
+                
+                <!-- Item 6 -->
+                <div class="flex items-baseline justify-between w-full">
+                    <span class="text-lg sm:text-xl md:text-2xl font-medium pr-2 sm:pr-4 bg-brand-bg relative z-10 shrink-0">Affogato</span>
+                    <div class="flex-grow border-b-2 border-dotted border-brand-text/20 relative top-[-4px] sm:top-[-6px] min-w-[10px]"></div>
+                    <span class="text-lg sm:text-xl md:text-2xl font-medium pl-2 sm:pl-4 bg-brand-bg relative z-10 shrink-0">₹320</span>
+                </div>
+            </div>
+            
+            <p class="text-center italic text-brand-text/60 mt-10 md:mt-12 text-sm md:text-base">
+                Prices include GST. Beans change weekly.
+            </p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="visit" class="py-20 md:py-24 border-t border-brand-text/10 scroll-m-20">
+            <h2 class="font-heading text-5xl mb-10 md:mb-12 text-center md:text-left">Come find us</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
+                <!-- Details Column -->
+                <div class="flex flex-col justify-center space-y-8">
+                    <div>
+                        <h3 class="text-xs md:text-sm font-semibold uppercase tracking-wider text-brand-text/50 mb-2">Address & Hours</h3>
+                        <p class="text-lg md:text-2xl text-brand-text/90 leading-relaxed max-w-sm">
+                            12, Design District, 2nd Floor.<br>
+                            Open 8am–8pm, closed Wednesdays.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xs md:text-sm font-semibold uppercase tracking-wider text-brand-text/50 mb-4">Follow along</h3>
+                        <div class="flex gap-6 text-base md:text-lg font-medium">
+                            <a href="#" class="underline-offset-4 hover:underline hover:text-brand-terracotta transition-colors">Instagram</a>
+                            <a href="#" class="underline-offset-4 hover:underline hover:text-brand-terracotta transition-colors">Are.na</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Map Placeholder -->
+                <div class="bg-stone-200 aspect-video rounded-2xl flex items-center justify-center text-brand-text/40 shadow-inner">
+                    <span class="font-medium text-lg tracking-wide uppercase">Map</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-brand-text/10 text-center text-xs md:text-sm text-brand-text/50">
+        <p>&copy; 2026 Grind Coffee Shop. All rights reserved.</p>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+            
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
